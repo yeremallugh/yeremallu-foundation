@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
-  { name: "Our Programmes", href: "/programmes" },
+  { name: "Our Programs", href: "/programmes" },
   { name: "Northern Stars", href: "/programmes/northern-stars" },
   { name: "Diabetes Outreach", href: "/programmes/diabetes-outreach" },
   { name: "Community Giving", href: "/programmes/community-giving" },
@@ -140,19 +140,19 @@ export function Footer() {
           </div>
           <div className="flex space-x-6 text-sm">
             <Link
-              href="/privacy-policy"
+              href="/privacy"
               className="text-gray-400 hover:text-earthy-green transition-colors duration-300"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms-of-service"
+              href="/terms"
               className="text-gray-400 hover:text-earthy-green transition-colors duration-300"
             >
               Terms of Service
             </Link>
             <Link
-              href="/transparency"
+              href="/financial-transparency"
               className="text-gray-400 hover:text-earthy-green transition-colors duration-300"
             >
               Financial Transparency

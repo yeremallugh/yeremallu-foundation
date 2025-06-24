@@ -15,8 +15,8 @@ const navigation = [
     name: "Programs", 
     href: "/programmes",
     subItems: [
-      { name: "Northern Stars", href: "/programmes/northern-stars" },
-      { name: "Diabetes Outreach", href: "/programmes/diabetes-outreach" },
+      { name: "Northern Stars Mentorship", href: "/programmes/northern-stars" },
+      { name: "J & C Diabetes Outreach", href: "/programmes/diabetes-outreach" },
       { name: "Community Giving", href: "/programmes/community-giving" },
     ]
   },
@@ -29,6 +29,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [isDropdownHovered, setIsDropdownHovered] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -43,6 +44,15 @@ export function Header() {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
+  };
+
+  const handleMouseLeave = () => {
+    // Add a small delay to prevent the dropdown from disappearing immediately
+    setTimeout(() => {
+      if (!isDropdownHovered) {
+        setHoveredItem(null);
+      }
+    }, 100);
   };
 
   return (
@@ -80,7 +90,7 @@ export function Header() {
                 key={item.name}
                 className="relative"
                 onMouseEnter={() => setHoveredItem(item.name)}
-                onMouseLeave={() => setHoveredItem(null)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
@@ -96,12 +106,17 @@ export function Header() {
                 </Link>
                 
                 {/* Dropdown for Programmes */}
-                {item.subItems && hoveredItem === item.name && (
+                {item.subItems && (hoveredItem === item.name || isDropdownHovered) && (
                   <motion.div
                     className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 duration-900"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
+                    onMouseEnter={() => setIsDropdownHovered(true)}
+                    onMouseLeave={() => {
+                      setIsDropdownHovered(false);
+                      setHoveredItem(null);
+                    }}
                   >
                     {item.subItems.map((subItem) => (
                       <Link
