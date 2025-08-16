@@ -5,13 +5,10 @@ import { motion } from "framer-motion";
 import { 
   FileText, 
   Shield, 
-  Users, 
-  Heart, 
   ArrowRight, 
   CheckCircle, 
   AlertTriangle,
   Mail,
-  Phone,
   Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

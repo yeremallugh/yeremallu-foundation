@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { HeroSection } from "@/components/sections/hero-section";
-import { ProgramCard } from "@/components/sections/program-card";
 import { AnimatedCounter } from "@/components/sections/animated-counter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -18,9 +17,8 @@ import {
   Globe,
   ArrowRight,
   CheckCircle,
-  Calendar,
-  MapPin
 } from "lucide-react";
+import Image from "next/image";
 
 const programsOverview = [
   {
@@ -28,6 +26,7 @@ const programsOverview = [
     description: "Our flagship program connecting rural students in Northern Ghana with global mentors to unlock their potential and pursue higher education through one-on-one guidance and support.",
     icon: <GraduationCap className="h-8 w-8" />,
     href: "/programmes/northern-stars",
+    image: "/images/yeremallu-5.JPG",
     stats: [
       { label: "Active Mentees", value: "75" },
       { label: "Success Rate", value: "92%" },
@@ -50,6 +49,7 @@ const programsOverview = [
     description: "Honoring the memory of Charles and Juliet through comprehensive diabetes education, screening, and support services for communities across Northern Ghana.",
     icon: <HeartPulse className="h-8 w-8" />,
     href: "/programmes/diabetes-outreach",
+    image: "/images/yeremallu-12.JPG",
     stats: [
       { label: "Screenings", value: "300+" },
       { label: "Lives Saved", value: "15" },
@@ -72,6 +72,7 @@ const programsOverview = [
     description: "Annual distribution of essential items and support to families in need, strengthening community bonds and providing immediate relief to vulnerable households.",
     icon: <HandHeart className="h-8 w-8" />,
     href: "/programmes/community-giving",
+    image: "/images/yeremallu-16.JPG",
     stats: [
       { label: "Families Helped", value: "120" },
       { label: "Items Distributed", value: "500+" },
@@ -123,21 +124,11 @@ export default function ProgrammesPage() {
       {/* Hero Section */}
       <HeroSection
         title="Our Programs"
-        subtitle="Making a Difference"
-        description="Three pillars of transformation: education, health, and community support working together to create lasting change in Northern Ghana"
-        ctaButtons={[
-          {
-            text: "Get Involved",
-            href: "/get-involved",
-            variant: "primary"
-          },
-          {
-            text: "Contact Us",
-            href: "/contact",
-            variant: "secondary"
-          }
-        ]}
-        height="large"
+        subtitle="Three Pillars of Transformation"
+        description="Education, health awareness, and community support working together to create lasting change in Northern Ghana"
+        height="medium"
+        textAlign="center"
+        backgroundImage="/images/yeremallu-29.JPG"
       />
 
       {/* Overall Impact Statistics */}
@@ -210,9 +201,21 @@ export default function ProgrammesPage() {
               >
                 <Card className="border-0 shadow-xl overflow-hidden">
                   <CardContent className="p-0">
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                    <div className={`grid grid-cols-1 lg:grid-cols-3 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                      {/* Image Side */}
+                      <div className={`relative h-64 lg:h-auto ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                        <Image 
+                          src={program.image} 
+                          alt={program.title}
+                          className="w-full h-full object-cover"
+                          width={500}
+                          height={500}
+                        />
+                        <div className="absolute inset-0 bg-black/20" />
+                      </div>
+
                       {/* Content Side */}
-                      <div className={`p-8 lg:p-12 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                      <div className={`p-8 lg:p-12 lg:col-span-2 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                         <div className="flex items-center space-x-4 mb-6">
                           <div className="p-3 bg-earthy-green/10 rounded-full text-earthy-green">
                             {program.icon}
@@ -257,25 +260,64 @@ export default function ProgrammesPage() {
                           </Link>
                         </Button>
                       </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                      {/* Stats Side */}
-                      <div className={`bg-warm-sand p-8 lg:p-12 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                        <h4 className="text-xl font-bold text-deep-charcoal mb-8 text-center">
-                          Program Impact
-                        </h4>
-                        <div className="grid grid-cols-2 gap-6">
-                          {program.stats.map((stat, idx) => (
-                            <div key={idx} className="text-center">
-                              <div className="text-2xl md:text-3xl font-bold text-earthy-green mb-2">
-                                {stat.value}
-                              </div>
-                              <div className="text-sm text-deep-charcoal font-medium">
-                                {stat.label}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+      {/* Program Statistics */}
+      <section className="py-16 lg:py-24 bg-light-gray">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-deep-charcoal mb-6">
+              Program Impact at a Glance
+            </h2>
+            <p className="text-lg md:text-xl text-medium-gray max-w-3xl mx-auto">
+              See the numbers behind our transformation efforts across all three programs
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {programsOverview.map((program, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-6">
+                      <div className="p-4 bg-earthy-green/10 rounded-full text-earthy-green inline-block mb-4">
+                        {program.icon}
                       </div>
+                      <h3 className="text-xl font-bold text-deep-charcoal mb-4">
+                        {program.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      {program.stats.map((stat, idx) => (
+                        <div key={idx} className="text-center">
+                          <div className="text-2xl font-bold text-earthy-green mb-1">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-deep-charcoal font-medium">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
@@ -299,8 +341,8 @@ export default function ProgrammesPage() {
               Integrated Impact
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto">
-              Our programs don't work in isolation. They create a comprehensive ecosystem of support 
-              that addresses the interconnected challenges facing Northern Ghana's communities.
+              Our programs don&apos;t work in isolation. They create a comprehensive ecosystem of support 
+              that addresses the interconnected challenges facing Northern Ghana&apos;s communities.
             </p>
           </motion.div>
 
@@ -374,7 +416,7 @@ export default function ProgrammesPage() {
             </h2>
             <p className="text-lg md:text-xl text-medium-gray max-w-3xl mx-auto mb-8">
               Whether you want to mentor a student, support health initiatives, or contribute to 
-              community giving, there's a place for you in our mission.
+              community giving, there&apos;s a place for you in our mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

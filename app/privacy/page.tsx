@@ -12,7 +12,6 @@ import {
   AlertTriangle,
   Mail,
   FileText,
-  Heart,
   Database,
   Key
 } from "lucide-react";

@@ -15,6 +15,7 @@ import {
   Calendar,
   MapPin
 } from "lucide-react";
+import Image from "next/image";
 
 const galleryCategories = [
   { id: "all", label: "All Photos", icon: <Camera className="h-4 w-4" /> },
@@ -32,7 +33,7 @@ const galleryItems = [
     category: "mentorship",
     date: "2024-01-15",
     location: "Tamale, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-5.JPG"
   },
   {
     id: 2,
@@ -41,7 +42,7 @@ const galleryItems = [
     category: "health",
     date: "2024-02-20",
     location: "Yendi, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-12.JPG"
   },
   {
     id: 3,
@@ -50,7 +51,7 @@ const galleryItems = [
     category: "community",
     date: "2023-12-10",
     location: "Gushegu, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-16.JPG"
   },
   {
     id: 4,
@@ -59,7 +60,7 @@ const galleryItems = [
     category: "events",
     date: "2024-03-05",
     location: "Tamale, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-20.JPG"
   },
   {
     id: 5,
@@ -68,7 +69,7 @@ const galleryItems = [
     category: "health",
     date: "2024-01-28",
     location: "Savelugu, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-21.JPG"
   },
   {
     id: 6,
@@ -77,7 +78,7 @@ const galleryItems = [
     category: "mentorship",
     date: "2024-02-14",
     location: "Virtual Event",
-    placeholder: true
+    image: "/images/yeremallu-22.JPG"
   },
   {
     id: 7,
@@ -86,7 +87,7 @@ const galleryItems = [
     category: "events",
     date: "2024-01-10",
     location: "Dagbon Palace, Yendi",
-    placeholder: true
+    image: "/images/yeremallu-23.JPG"
   },
   {
     id: 8,
@@ -95,7 +96,7 @@ const galleryItems = [
     category: "community",
     date: "2024-02-01",
     location: "Kumbungu, Northern Region",
-    placeholder: true
+    image: "/images/yeremallu-24.JPG"
   },
   {
     id: 9,
@@ -104,7 +105,7 @@ const galleryItems = [
     category: "mentorship",
     date: "2024-03-12",
     location: "University of Ghana, Legon",
-    placeholder: true
+    image: "/images/yeremallu-25.JPG"
   }
 ];
 
@@ -166,14 +167,15 @@ export default function GalleryPage() {
                 layout
               >
                 <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-                  {/* Image Placeholder */}
-                  <div className="relative h-64 bg-gradient-to-br from-earthy-green/20 via-warm-sand/30 to-sunset-orange/20 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-earthy-green">
-                        <Camera className="h-12 w-12 mx-auto mb-2 opacity-50" />
-                        <p className="text-sm font-medium opacity-70">Photo Coming Soon</p>
-                      </div>
-                    </div>
+                  {/* Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    <Image 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      width={500}
+                      height={500}
+                    />
                     
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">

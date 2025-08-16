@@ -7,19 +7,15 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { 
   Heart, 
   Users, 
   Globe, 
   Calendar,
-  BookOpen,
   Target,
   HandHeart,
-  Star,
   CheckCircle,
   ArrowRight,
-  Clock,
   Award,
   DollarSign,
   Gift,
@@ -246,7 +242,7 @@ export default function GetInvolvedPage() {
             className="text-center mt-12"
           >
             <p className="text-medium-gray mb-6">
-              Don't see a perfect fit? We're always looking for passionate people with diverse skills.
+              Don&apos;t see a perfect fit? We&apos;re always looking for passionate people with diverse skills.
             </p>
             <Button
               asChild
@@ -431,8 +427,8 @@ export default function GetInvolvedPage() {
             </h2>
             <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto mb-12 leading-relaxed">
               Every volunteer hour, every donation, and every share helps us build stronger communities 
-              in Northern Ghana. When you get involved with Yeremallu Foundation, you're not just supporting 
-              a cause – you're investing in the future of young people and the health of entire communities.
+              in Northern Ghana. When you get involved with Yeremallu Foundation, you&apos;re not just supporting 
+              a cause – you&apos;re investing in the future of young people and the health of entire communities.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

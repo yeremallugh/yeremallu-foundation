@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Heart, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
@@ -30,8 +31,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Foundation Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <Heart className="h-8 w-8 text-earthy-green" />
+            <div className="flex items-center space-x-3 mb-6">
+              <Image 
+                src="/images/logo.JPG" 
+                alt="Yeremallu Foundation Logo" 
+                className="h-10 w-10 rounded-full object-cover"
+                width={500}
+                height={500}
+              />
               <span className="text-xl font-bold">Yeremallu Foundation</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">

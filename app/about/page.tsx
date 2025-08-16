@@ -5,17 +5,13 @@ import { motion } from "framer-motion";
 import { HeroSection } from "@/components/sections/hero-section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
 import { 
   Heart, 
   Eye, 
   Target, 
   Users, 
-  Lightbulb,
-  HandHeart,
-  Globe,
-  Star
 } from "lucide-react";
+import Image from "next/image";
 
 const missionVisionValues = [
   {
@@ -43,37 +39,37 @@ const boardMembers = [
     name: "John Doe",
     role: "Chairman",
     bio: "Experienced development professional with 15+ years in NGO management across West Africa. John brings strategic leadership and deep understanding of community development challenges and opportunities.",
-    image: null
+    image: "/images/yeremallu-2.JPG"
   },
   {
     name: "Jane Smith",
     role: "Secretary",
     bio: "Healthcare advocate and former nurse with deep expertise in community health programs. Jane leads our health initiatives and ensures our diabetes outreach program maintains the highest standards of care.",
-    image: null
+    image: "/images/yeremallu-3.JPG"
   },
   {
     name: "Michael Johnson",
     role: "Treasurer",
     bio: "Financial analyst specializing in non-profit accounting and donor fund management. Michael ensures transparent financial stewardship and sustainable program funding across all our initiatives.",
-    image: null
+    image: "/images/yeremallu-4.JPG"
   },
   {
     name: "Dr. Amina Hassan",
     role: "Programs Director",
     bio: "Education specialist with PhD in Development Studies and extensive experience in youth mentorship programs. Dr. Hassan oversees our Northern Stars program and educational partnerships.",
-    image: null
+    image: "/images/yeremallu-6.JPG"
   },
   {
     name: "Samuel Osei",
     role: "Community Liaison",
     bio: "Native of Northern Ghana with strong community connections and cultural insights. Samuel ensures our programs remain culturally appropriate and community-led.",
-    image: null
+    image: "/images/yeremallu-7.JPG"
   },
   {
     name: "Sarah Williams",
     role: "International Relations",
     bio: "Former diplomat with expertise in international development and cross-cultural partnerships. Sarah manages our global mentor network and international collaborations.",
-    image: null
+    image: "/images/yeremallu-8.JPG"
   }
 ];
 
@@ -151,28 +147,23 @@ export default function AboutPage() {
       </section>
 
       {/* Founder's Full Story */}
-      <section className="py-16 lg:py-24 bg-warm-sand">
+      <section className="py-16 lg:py-24 bg-light-gray">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="sticky top-8"
             >
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-earthy-green to-deep-charcoal overflow-hidden mb-6">
-                <div className="w-full h-full flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <Heart className="h-20 w-20 mx-auto mb-4" />
-                    <p className="text-xl font-medium">Founder Photo</p>
-                    <p className="text-sm opacity-80">Coming Soon</p>
-                  </div>
-                </div>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-deep-charcoal mb-2">Foundation Founder</h3>
-                <p className="text-medium-gray">Visionary & Community Leader</p>
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <Image 
+                  src="/images/yeremallu-28.JPG" 
+                  alt="Yeremallu Foundation Founder Story" 
+                  className="w-full h-full object-cover"
+                  width={500}
+                  height={500}
+                />
               </div>
             </motion.div>
 
@@ -181,58 +172,47 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
             >
-              <div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-deep-charcoal mb-8">
-                  A Journey of Purpose
-                </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-deep-charcoal mb-6">
+                From Vision to Reality
+              </h2>
+              <div className="space-y-6 text-lg text-medium-gray leading-relaxed">
+                <p>
+                  Growing up in Northern Ghana, our founder witnessed firsthand the barriers that young 
+                  people face in pursuing their dreams. Limited access to quality education, lack of 
+                  mentorship opportunities, and inadequate healthcare resources created cycles that 
+                  seemed impossible to break. Yet, through determination, community support, and the 
+                  guidance of caring mentors, these barriers became stepping stones to success.
+                </p>
                 
-                <div className="space-y-6 text-lg text-medium-gray leading-relaxed">
-                  <p>
-                    The Yeremallu Foundation was born from a profound love for community and an unwavering 
-                    belief in the transformative power of education and healthcare. Our founder's journey 
-                    from the rural villages of Northern Ghana to international success sparked a deep 
-                    understanding of both the challenges and immense potential within these communities.
-                  </p>
-                  
-                  <p>
-                    Growing up in Northern Ghana, our founder witnessed firsthand the barriers that young 
-                    people face in pursuing their dreams. Limited access to quality education, lack of 
-                    mentorship opportunities, and inadequate healthcare resources created cycles that 
-                    seemed impossible to break. Yet, through determination, community support, and the 
-                    guidance of caring mentors, these barriers became stepping stones to success.
-                  </p>
-                  
-                  <p>
-                    The name "Yeremallu" carries deep cultural significance, embodying the spirit of 
-                    collective responsibility and mutual support that defines Northern Ghanaian communities. 
-                    It represents the belief that when we lift each other up, entire communities rise together.
-                  </p>
-                  
-                  <p>
-                    After years of international experience in development, healthcare, and education, 
-                    our founder returned home with a clear mission: to create sustainable programs that 
-                    would empower young people, strengthen families, and build healthier communities. 
-                    The foundation officially launched with the Northern Stars mentorship program, 
-                    connecting rural students with global mentors.
-                  </p>
-                  
-                  <p>
-                    The tragic loss of beloved community members Charles and Juliet to diabetes-related 
-                    complications became a catalyst for expanding our mission to include comprehensive 
-                    health education. Their memory lives on through our J&C Diabetes Outreach program, 
-                    which has since prevented countless similar tragedies through early detection and education.
-                  </p>
-                  
-                  <p>
-                    Today, the Yeremallu Foundation stands as a testament to what's possible when 
-                    compassion meets action. Every program we implement, every student we mentor, 
-                    and every family we support reflects our founder's original vision: that every 
-                    person deserves the opportunity to reach their full potential, regardless of 
-                    where they start their journey.
-                  </p>
-                </div>
+                <p>
+                  The name &quot;Yeremallu&quot; carries deep cultural significance, embodying the spirit of 
+                  collective responsibility and mutual support that defines Northern Ghanaian communities. 
+                  It represents the belief that when we lift each other up, entire communities rise together.
+                </p>
+                
+                <p>
+                  After years of international experience in development, healthcare, and education, 
+                  our founder returned home with a clear mission: to create sustainable programs that 
+                  would empower young people, strengthen families, and build healthier communities. 
+                  The foundation officially launched with the Northern Stars mentorship program, 
+                  connecting rural students with global mentors.
+                </p>
+                
+                <p>
+                  The tragic loss of beloved community members Charles and Juliet to diabetes-related 
+                  complications became a catalyst for expanding our mission to include comprehensive 
+                  health education. Their memory lives on through our J&C Diabetes Outreach program, 
+                  which has since prevented countless similar tragedies through early detection and education.
+                </p>
+                
+                <p>
+                    Today, the Yeremallu Foundation stands as a testament to what&apos;s possible when 
+                  compassion meets action. Every program we implement, every student we mentor, 
+                  and every family we support reflects our founder&apos;s original vision: that every 
+                  person deserves the opportunity to reach their full potential, regardless of 
+                  where they start their journey.
+                </p>
               </div>
             </motion.div>
           </div>

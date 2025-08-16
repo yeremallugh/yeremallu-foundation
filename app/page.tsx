@@ -11,16 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
-  Heart, 
   GraduationCap, 
   HeartPulse, 
   HandHeart, 
   Users, 
-  Target, 
-  Globe,
   ArrowRight,
   Mail 
 } from "lucide-react";
+import Image from "next/image";
 
 const impactStats = [
   {
@@ -122,8 +120,8 @@ export default function HomePage() {
           }
         ]}
         height="full"
-        // backgroundVideo="/backgroundVideo.mp4"
-        // backgroundImage="/hero-background.jpg"
+        //backgroundVideo="/backgroundVideo.mp4"
+        backgroundImage="/hero-background.jpg"
       />
 
       {/* Impact Statistics Section */}
@@ -140,7 +138,7 @@ export default function HomePage() {
               Our Impact in Numbers
             </h2>
             <p className="text-lg md:text-xl text-medium-gray max-w-3xl mx-auto">
-              Every number tells a story of transformation, hope, and lasting change in Northern Ghana's communities.
+              Every number tells a story of transformation, hope, and lasting change in Northern Ghana&apos;s communities.
             </p>
           </motion.div>
 
@@ -228,14 +226,14 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-earthy-green to-deep-charcoal overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <Heart className="h-16 w-16 mx-auto mb-4" />
-                    <p className="text-lg font-medium">Founder Photo</p>
-                    <p className="text-sm opacity-80">Coming Soon</p>
-                  </div>
-                </div>
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                <Image 
+                  src="/images/yeremallu-34.JPG" 
+                  alt="Yeremallu Foundation Founder" 
+                  className="w-full h-full object-cover"
+                  width={500}
+                  height={500}
+                />
               </div>
             </motion.div>
 
@@ -250,7 +248,7 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-medium-gray mb-6 leading-relaxed">
                 The Yeremallu Foundation was born from a deep love for community and a vision to create lasting change. 
-                Our founder's journey from Northern Ghana to international success sparked a mission to give back and 
+                Our founder&apos;s journey from Northern Ghana to international success sparked a mission to give back and 
                 empower the next generation.
               </p>
               <p className="text-lg text-medium-gray mb-8 leading-relaxed">

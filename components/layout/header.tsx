@@ -3,10 +3,11 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -69,13 +70,14 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group cursor-pointer">
+          <Link href="/" className="flex items-center space-x-3 group cursor-pointer">
             <div className="relative">
-              <Heart className="h-8 w-8 text-earthy-green group-hover:text-sunset-orange transition-colors duration-300" />
-              <motion.div
-                className="absolute inset-0 rounded-full bg-earthy-green/20"
-                whileHover={{ scale: 1.2, opacity: 0.3 }}
-                transition={{ duration: 0.2 }}
+              <Image 
+                src="/images/logo.JPG" 
+                alt="Yeremallu Foundation Logo" 
+                className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+                width={500}
+                height={500}
               />
             </div>
             <span className="text-xl md:text-2xl font-bold text-deep-charcoal">
@@ -164,8 +166,14 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80 p-8">
               <div className="flex flex-col space-y-4 mt-8">
-                <div className="flex items-center space-x-2 pb-4 border-b border-gray-200">
-                  <Heart className="h-6 w-6 text-earthy-green" />
+                <div className="flex items-center space-x-3 pb-4 border-b border-gray-200">
+                  <Image 
+                    src="/images/logo.JPG" 
+                    alt="Yeremallu Foundation Logo" 
+                    className="h-8 w-8 rounded-full object-cover"
+                    width={500}
+                    height={500}
+                  />
                   <span className="text-lg font-bold text-deep-charcoal">
                     Yeremallu Foundation
                   </span>

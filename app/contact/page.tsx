@@ -180,8 +180,8 @@ export default function ContactPage() {
                 Send Us a Message
               </h2>
               <p className="text-lg text-medium-gray mb-8 leading-relaxed">
-                Whether you're interested in our programs, want to volunteer, or have questions 
-                about our work, we're here to help. Fill out the form and we'll get back to you 
+                Whether you&apos;re interested in our programs, want to volunteer, or have questions 
+                about our work, we&apos;re here to help. Fill out the form and we&apos;ll get back to you 
                 as soon as possible.
               </p>
               
@@ -220,7 +220,7 @@ export default function ContactPage() {
                       <CheckCircle className="h-5 w-5 text-green-600" />
                       <div>
                         <p className="text-green-800 font-medium">Message sent successfully!</p>
-                        <p className="text-green-600 text-sm">We'll get back to you within 24 hours.</p>
+                        <p className="text-green-600 text-sm">We&apos;ll get back to you within 24 hours.</p>
                       </div>
                     </motion.div>
                   )}
@@ -408,7 +408,7 @@ export default function ContactPage() {
                     What are the requirements to become a mentor?
                   </h3>
                   <p className="text-medium-gray">
-                    Mentors should have a bachelor's degree, professional experience, and 
+                    Mentors should have a bachelor&apos;s degree, professional experience, and 
                     commitment to 2-3 hours monthly for 1-2 years. We provide full training.
                   </p>
                 </CardContent>

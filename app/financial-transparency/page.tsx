@@ -3,8 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Heart, 
-  DollarSign, 
   TrendingUp, 
   PieChart, 
   FileText, 
@@ -12,10 +10,7 @@ import {
   CheckCircle, 
   ArrowRight, 
   Download,
-  Calendar,
-  BarChart3,
   Users,
-  Target,
   Award
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -439,7 +434,7 @@ export default function FinancialTransparencyPage() {
               Questions About Our Finances?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              We're here to answer any questions about our financial practices and how your donations are used.
+              We&apos;re here to answer any questions about our financial practices and how your donations are used.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

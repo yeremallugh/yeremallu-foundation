@@ -4,15 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   Heart, 
-  Users, 
-  Gift, 
+  Users,  
   HandHeart, 
   ArrowRight, 
   CheckCircle, 
-  Phone, 
-  Mail, 
   MapPin,
-  Calendar,
   Clock,
   Star,
   Home,
@@ -25,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { HeroSection } from "@/components/sections/hero-section";
 
 export default function CommunityGivingPage() {
   const fadeInUp = {
@@ -132,44 +129,14 @@ export default function CommunityGivingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-light-gray via-white to-light-gray">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-sunset-orange/10 to-earthy-green/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Badge className="mb-6 bg-sunset-orange/10 text-sunset-orange border-sunset-orange/20">
-              <HandHeart className="h-4 w-4 mr-2" />
-              Community Support Initiative
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-deep-charcoal mb-6">
-              Community Giving
-            </h1>
-            <p className="text-xl md:text-2xl text-medium-gray mb-8 leading-relaxed">
-              Strengthening communities through compassionate support, essential resources, and lasting relationships
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-sunset-orange hover:bg-sunset-orange/90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                Get Help Today
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-earthy-green text-earthy-green hover:bg-earthy-green hover:!text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                Volunteer With Us
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        title="Community Giving Program"
+        subtitle="Strengthening Communities"
+        description="Annual distribution of essential items and support to families in need, strengthening community bonds and providing immediate relief"
+        height="medium"
+        textAlign="center"
+        backgroundImage="/images/yeremallu-16.JPG"
+      />
 
       {/* Story Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -190,7 +157,7 @@ export default function CommunityGivingPage() {
               </h2>
               <div className="space-y-6 text-medium-gray leading-relaxed">
                 <p>
-                  The Community Giving program is the heart of our foundation's mission to support 
+                  The Community Giving program is the heart of our foundation&apos;s mission to support 
                   and strengthen the communities we serve. We believe that every individual and family 
                   deserves access to basic necessities, opportunities for growth, and a supportive network.
                 </p>
@@ -201,7 +168,7 @@ export default function CommunityGivingPage() {
                 </p>
                 <p>
                   Through partnerships with local organizations, dedicated volunteers, and generous donors, 
-                  we're able to address a wide range of community needs, from immediate assistance to 
+                  we&apos;re able to address a wide range of community needs, from immediate assistance to 
                   long-term support programs that help build stronger, more resilient communities.
                 </p>
               </div>
@@ -486,7 +453,7 @@ export default function CommunityGivingPage() {
                         <Star key={i} className="h-5 w-5 text-sunset-orange fill-current" />
                       ))}
                     </div>
-                    <p className="text-medium-gray mb-4 italic">"{testimonial.content}"</p>
+                    <p className="text-medium-gray mb-4 italic">&quot;{testimonial.content}&quot;</p>
                     <div>
                       <div className="font-semibold text-deep-charcoal">{testimonial.name}</div>
                       <div className="text-sm text-medium-gray">{testimonial.role}</div>
@@ -513,7 +480,7 @@ export default function CommunityGivingPage() {
               Ready to Make a Difference?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Whether you need support or want to help others, we're here to connect you with our community.
+              Whether you need support or want to help others, we&apos;re here to connect you with our community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

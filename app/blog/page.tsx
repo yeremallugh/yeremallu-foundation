@@ -148,7 +148,7 @@ export default function BlogPage() {
               Stories of Impact
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8">
-              Discover the stories behind our mission, the people we serve, and the communities we're building together.
+              Discover the stories behind our mission, the people we serve, and the communities we&apos;re building together.
             </p>
             <div className="flex items-center justify-center space-x-6 text-white/80">
               <div className="flex items-center space-x-2">

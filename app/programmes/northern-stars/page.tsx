@@ -8,7 +8,6 @@ import { AnimatedCounter } from "@/components/sections/animated-counter";
 import { Testimonial } from "@/components/sections/testimonial";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { 
   GraduationCap, 
@@ -91,22 +90,25 @@ const howItWorks = [
 
 const successStories = [
   {
-    quote: "My mentor helped me see that studying medicine wasn't just a dream - it was an achievable goal. Now I'm in my second year at university, and I plan to return to serve my community.",
+    quote: "My mentor helped me see that studying medicine wasn&apos;t just a dream - it was an achievable goal. Now I&apos;m in my second year at university, and I plan to return to serve my community.",
     author: "Amina S.",
     role: "Medical Student",
-    program: "Northern Stars Graduate"
+    program: "Northern Stars Graduate",
+    image: "/images/yeremallu-1.JPG"
   },
   {
     quote: "The program taught me more than academics. I learned confidence, leadership, and how to think globally while staying rooted in my community values.",
     author: "Ibrahim K.",
     role: "Engineering Student",
-    program: "Northern Stars Graduate"
+    program: "Northern Stars Graduate",
+    image: "/images/yeremallu-2.JPG"
   },
   {
-    quote: "Through Northern Stars, I discovered my passion for education. I'm now studying to become a teacher so I can give back to rural schools like mine.",
+    quote: "Through Northern Stars, I discovered my passion for education. I&apos;m now studying to become a teacher so I can give back to rural schools like mine.",
     author: "Fatima A.",
     role: "Education Student",
-    program: "Current Mentee"
+    program: "Current Mentee",
+    image: "/images/yeremallu-3.JPG"
   }
 ];
 
@@ -120,7 +122,7 @@ const eligibilityCriteria = [
 ];
 
 const mentorBenefits = [
-  "Make a direct impact on a young person's life",
+  "Make a direct impact on a young person&apos;s life",
   "Gain insights into Ghanaian culture and perspectives",
   "Develop cross-cultural communication skills",
   "Join a global network of changemakers",
@@ -133,23 +135,12 @@ export default function NorthernStarsPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <HeroSection
-        title="Northern Stars Mentorship"
-        subtitle="Our Flagship Program"
+        title="Northern Stars Mentorship Program"
+        subtitle="Empowering Dreams"
         description="Connecting rural students in Northern Ghana with global mentors to unlock their potential and pursue higher education"
-        ctaButtons={[
-          {
-            text: "Apply as Student",
-            href: "#apply-student",
-            variant: "primary"
-          },
-          {
-            text: "Become a Mentor",
-            href: "#become-mentor",
-            variant: "secondary"
-          }
-        ]}
-        height="large"
+        height="medium"
         textAlign="center"
+        backgroundImage="/images/yeremallu-9.JPG"
       />
 
       {/* Program Statistics */}
@@ -486,8 +477,8 @@ export default function NorthernStarsPage() {
               Ready to Get Started?
             </h2>
             <p className="text-lg md:text-xl text-medium-gray max-w-3xl mx-auto mb-8">
-              Whether you're a student ready to unlock your potential or a professional 
-              wanting to make a difference, we're here to support your journey.
+              Whether you&apos;re a student ready to unlock your potential or a professional 
+              wanting to make a difference, we&apos;re here to support your journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

@@ -7,10 +7,8 @@ import {
   Users, 
   Activity, 
   Award, 
-  ArrowRight, 
   CheckCircle, 
   Phone, 
-  Mail, 
   MapPin,
   Calendar,
   Clock,
@@ -19,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { HeroSection } from "@/components/sections/hero-section";
 
 export default function DiabetesOutreachPage() {
   const fadeInUp = {
@@ -69,19 +68,19 @@ export default function DiabetesOutreachPage() {
     {
       name: "Sarah Johnson",
       role: "Community Member",
-      content: "The diabetes screening saved my life. I had no idea I was at risk, and now I'm managing my condition with proper support.",
+      content: "The diabetes screening saved my life. I had no idea I was at risk, and now I&apos;m managing my condition with proper support.",
       rating: 5
     },
     {
       name: "Michael Chen",
       role: "Local Business Owner",
-      content: "The educational workshops helped me understand how to support my employees with diabetes. It's made a real difference in our workplace.",
+      content: "The educational workshops helped me understand how to support my employees with diabetes. It&apos;s made a real difference in our workplace.",
       rating: 5
     },
     {
       name: "Dr. Emily Rodriguez",
       role: "Healthcare Provider",
-      content: "The J&C Diabetes Outreach program fills a crucial gap in our community's healthcare. Their preventive approach is exactly what we need.",
+      content: "The J&C Diabetes Outreach program fills a crucial gap in our community&apos;s healthcare. Their preventive approach is exactly what we need.",
       rating: 5
     }
   ];
@@ -89,44 +88,14 @@ export default function DiabetesOutreachPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-light-gray via-white to-light-gray">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-earthy-green/10 to-sunset-orange/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            className="text-center max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Badge className="mb-6 bg-earthy-green/10 text-earthy-green border-earthy-green/20">
-              <Heart className="h-4 w-4 mr-2" />
-              Community Health Initiative
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-deep-charcoal mb-6">
-              J&C Diabetes Outreach
-            </h1>
-            <p className="text-xl md:text-2xl text-medium-gray mb-8 leading-relaxed">
-              Empowering communities through education, prevention, and support in the fight against diabetes
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-earthy-green hover:bg-earthy-green/90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                Get Screened Today
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-sunset-orange text-sunset-orange hover:bg-sunset-orange hover:!text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
-              >
-                Learn More
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        title="J&C Diabetes Outreach Program"
+        subtitle="Honoring Lives, Saving Lives"
+        description="Comprehensive diabetes education, screening, and support services for communities across Northern Ghana"
+        height="medium"
+        textAlign="center"
+        backgroundImage="/images/yeremallu-12.JPG"
+      />
 
       {/* Story Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -148,11 +117,11 @@ export default function DiabetesOutreachPage() {
               <div className="space-y-6 text-medium-gray leading-relaxed">
                 <p>
                   The J&C Diabetes Outreach program was born from a deeply personal experience. 
-                  When our founder's family was directly affected by diabetes, we witnessed firsthand 
+                  When our founder&apos;s family was directly affected by diabetes, we witnessed firsthand 
                   the devastating impact this disease can have on individuals, families, and entire communities.
                 </p>
                 <p>
-                  What started as a family's journey to understand and manage diabetes has grown into 
+                  What started as a family&apos;s journey to understand and manage diabetes has grown into 
                   a comprehensive community initiative. We recognized that many people in our community 
                   lacked access to proper diabetes education, screening, and support systems.
                 </p>
@@ -385,7 +354,7 @@ export default function DiabetesOutreachPage() {
                         <Star key={i} className="h-5 w-5 text-sunset-orange fill-current" />
                       ))}
                     </div>
-                    <p className="text-medium-gray mb-4 italic">"{testimonial.content}"</p>
+                    <p className="text-medium-gray mb-4 italic">&quot;{testimonial.content}&quot;</p>
                     <div>
                       <div className="font-semibold text-deep-charcoal">{testimonial.name}</div>
                       <div className="text-sm text-medium-gray">{testimonial.role}</div>

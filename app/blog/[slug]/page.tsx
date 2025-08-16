@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { 
   Calendar, 
   Clock, 
@@ -16,13 +15,11 @@ import {
   ArrowRight,
   Heart,
   Share2,
-  BookOpen,
   Eye,
   Facebook,
   Twitter,
   Linkedin,
   Mail,
-  MessageCircle
 } from "lucide-react";
 
 // Sample blog data (same as in main blog page)
