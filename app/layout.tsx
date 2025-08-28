@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yeremallufoundation.org'),
   title: {
     default: "Yeremallu Foundation | Empowering Northern Ghana",
     template: "%s | Yeremallu Foundation"
